@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+    int a,b,c,d,e;
+    int average,sum;
+
+    printf("Input five grades:\n");
+    scanf("%d%d%d%d%d",&a,&b,&c,&d,&e);
+
+    //add the grades
+    sum = a+b+c+d+e;
+    //calculate the average
+    average = sum/5;
+    printf("Average = %2d\n", average);
+
+    return 0;
+}
