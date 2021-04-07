@@ -1,0 +1,33 @@
+#include <stdio.h>
+#define MAX 10
+
+int sum(int arr[], int st, int l);
+ 
+int main()
+{
+    int arr[MAX];
+    int n, i, sum_array;
+    
+    printf("size of array :");
+    scanf("%d",&n);
+   
+    for(i=1;i<=n;i++)
+        {
+        printf("element %d : ",i);
+        scanf("%d",&arr[i]);
+        }
+
+    sum_array = sum(arr, 1, i);
+    printf("Sum of all array elements: %d\n", sum_array);
+    
+    return 0;
+}
+//Recursively finding the sum of elements in a array.
+int sum(int arr[], int st, int l)
+{
+    //Recursion base condition
+    if(st >= l)
+        return 0;
+        
+    return(arr[st] + sum(arr, st + 1,l));
+}
