@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+    int arr[3][2]={
+        {1100,5555},
+        {22112,2112},
+        {3322,7777}
+        };
+    int id_number,PIN;
+    
+    printf("Enter ID Number: ");
+    scanf("%d",&id_number);
+    printf("Enter PIN: ");
+    scanf("%d",&PIN);
+         
+
+    if(id_number == arr[0][0] && PIN == arr[0][1])
+        {
+        printf("\nYou have successfully logged in\n");
+        printf("ID#: %d\n",id_number);
+        }
+    else if(id_number == arr[1][0] && PIN == arr[1][1])
+        {
+        printf("\nYou have successfully logged in\n");
+        printf("ID#: %d\n",id_number);
+        }
+    else if(id_number == arr[2][0] && PIN == arr[2][1])
+        {
+        printf("\nYou have successfully logged in\n");
+        printf("ID#: %d\n",id_number);
+        }
+    else
+        printf("\nInvalid ID/PIN!\n");
+        
+    return 0;
+}
