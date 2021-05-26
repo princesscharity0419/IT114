@@ -1,0 +1,71 @@
+#include<stdio.h>
+
+void unit_chg(int unit_func);
+void sur_chg(int amt_func);
+void total_amt(int net_amt, int surchg_func);
+
+int main()
+{
+    int cust_id, unit_con;
+    
+    printf("Input Customer ID: ");
+    scanf("%d",&cust_id);
+    printf("Input the unit Consumed by the Customer: ");
+    scanf("%d",&unit_con);
+    
+    printf("\n[Electricity Bill]\n");
+    printf("Customer ID#                :%d\n",cust_id);
+    printf("Unit Consumed               :%d\n",unit_con);
+    
+    unit_chg(unit_con);
+    
+    return 0;
+}
+
+void unit_chg(int unit_func) 
+{
+    float gramt, chg;
+    
+    if(unit_func<200)
+        chg = 1.50;
+    else if(unit_func>=250 && unit_func<400)
+        chg = 1.60;
+    else if(unit_func>=450 && unit_func<600)
+        chg = 1.85;
+    else(unit_func>=600);
+        chg = 2.00;
+    
+    gramt = unit_func*chg;
+    
+    printf("Unit Charge @P.%4.2f per unit:P%8.2f\n", chg, gramt);
+
+    sur_chg(gramt);
+}
+
+void sur_chg(int amt_func)
+{
+    float sur_chg;
+
+    if(amt_func>400)
+    {
+        sur_chg = amt_func*0.10;
+    }
+    
+    printf("Surcharge amount            :P%8.2f\n", sur_chg);
+
+    total_amt(amt_func, sur_chg);
+} 
+
+void total_amt(int net_amt, int surchg_func)  
+{
+    float total_amt;
+
+    total_amt = net_amt+surchg_func;
+    if(total_amt<100)
+    {
+        total_amt = 100;
+    }
+    
+    printf("Total Customer Bill         :P%8.2f\n", total_amt);
+           
+}
