@@ -1,0 +1,46 @@
+#include <stdio.h> 
+
+int main ()
+{ 
+    FILE*fptr1, FILE*fptr2;
+    char name[50]; 
+    int num, i, math, sci, eng;  
+    
+    fptr1 = fopen("file1.txt", "w+");
+    fptr2 = fopen("file2.txt", "w+");
+    
+    if(fptr1==NULL)
+    {
+        printf("File does not exist\n");
+        return;
+    }
+    if(fptr2==NULL)
+    {
+        printf("File does not exist\n");
+        return;
+    }
+    for (i = 0; i < 2; ++i)     
+    {   
+        printf("Student name: "); 
+        scanf("%s", &name); 
+        printf("ID Number:");
+        scanf("%d", &num);
+        printf("Math Grade:");
+        scanf("%d", &math); 
+        printf("Science Grade:");
+        scanf("%d", &sci);
+        printf("English Grade:");
+        scanf("%d", &eng);
+        
+        sum = math+sci+eng;
+        printf("Total Grade(calculate total sum of grades): %d\n", sum);
+        
+        average = sum/3;
+        printf("Grade Average(calculate the total average): %d\n\n", average);
+    } 
+ 
+    fclose(fptr1);
+    fclose(fptr2);
+  
+    return 0; 
+}
